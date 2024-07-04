@@ -48,6 +48,7 @@ if [ $? -eq 0 ]; then
 else
     useradd -r -M -U -G sudo -s /usr/sbin/nologin gvm
     usermod -aG gvm $USER
+    echo "gvm ALL = NOPASSWD: /usr/local/sbin/openvas" >> /etc/sudoers
 fi
 
 # Creating a Source, Build and Install Directory
